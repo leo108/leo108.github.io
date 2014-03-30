@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="author" content="leo108">
-    <title>简介</title>
+    <title>Introduce</title>
     <meta name="description" content="SinglePHP" />
     <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://v3.bootcss.com/docs-assets/css/docs.css" rel="stylesheet">
@@ -24,15 +24,15 @@
     <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
         <li class="active">
-          <a href="./start.html">简介</a>
+          <a href="./start.html">Introduce</a>
         </li>
         <li>
-          <a href="./doc.html">详细文档</a>
+          <a href="./doc.html">Document</a>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a target='_blank' href="https://github.com/leo108/SinglePHP">SinglePHP官网</a>
+          <a target='_blank' href="https://github.com/leo108/SinglePHP">SinglePHP Website</a>
         </li>
       </ul>
     </nav>
@@ -40,8 +40,8 @@
 </header>
     <div class="bs-header" id="content">
       <div class="container">
-        <h1>简介</h1>
-        <p>简要介绍SinglePHP，目录结构和Hello World。</p>
+        <h1>Introduce</h1>
+        <p>A simple introduce to SinglePHP，directoies struct and Hello World</p>
       </div>
     </div>
     <div class="container bs-docs-container">
@@ -50,13 +50,13 @@
           <div class="bs-sidebar hidden-print" role="complementary">
             <ul class="nav bs-sidenav">
                 <li>
-                  <a href="#what">什么是SinglePHP</a>
+                  <a href="#what">What is SinglePHP</a>
                 </li>
                 <li>
-                  <a href="#download">下载SinglePHP</a>
+                  <a href="#download">Download SinglePHP</a>
                 </li>
                 <li>
-                  <a href="#dir">目录结构</a>
+                  <a href="#dir">Directoies Struct</a>
                 </li>
                 <li>
                   <a href="#hello_world">Hello World</a>
@@ -67,46 +67,46 @@
         <div class="col-md-9" role="main">
             <div class="bs-docs-section">
               <div class="page-header">
-                <h1 id="what">什么是SinglePHP</h1>
+                <h1 id="what">What is SinglePHP</h1>
               </div>
-              <p class="lead">SinglePHP是一个单文件PHP框架，适用于简单系统的快速开发，提供了简单的路由方式，抛弃了坑爹的PHP模板，采用原生PHP语法来渲染页面,同时提供了widget功能，简单且实用。</p>
-              <p>目前SinglePHP由<a href="http://leo108.com" target='_blank'>leo108</a>开发维护，如果你希望参与到此项目中来，可以到<a href='https://github.com/leo108/SinglePHP' target='_blank'>Github</a>上Fork项目并提交Pull Request。</p>
+              <p class="lead">SinglePHP is a single file PHP framework, developed for simple php website development, with a simple router and use raw php syntax as page template instead of shit template engine, and the widget component is simple and powerful.</p>
+              <p>SinglePHP is developed by <a href="http://leo108.com" target='_blank'>leo108</a>, you can fork the project at <a href='https://github.com/leo108/SinglePHP' target='_blank'>Github</a> and make pull requests.</p>
             </div>
             <div class="bs-docs-section">
               <div class="page-header">
-                <h1 id="download">下载SinglePHP</h1>
+                <h1 id="download">Download SinglePHP</h1>
               </div>
-              <p class="lead">可以通过github直接下载压缩好的代码文件。</p>
-              <p><a class="btn btn-lg btn-primary" href="https://github.com/leo108/SinglePHP/archive/master.zip" >下载稳定版本</a></p>
-              <p class="lead">当然也可以通过git直接clone项目,master分支为稳定版本，develop分支为开发版本，可能会有一些实验性的功能。</p>
+              <p class="lead">Zip file from github</p>
+              <p><a class="btn btn-lg btn-primary" href="https://github.com/leo108/SinglePHP/archive/master.zip" >Current Stable</a></p>
+              <p class="lead">use git clone, the master branch is stable version, the develop branch may contains some experiment feature. </p>
                 <div class="highlight">
                 <p><code>git clone https://github.com/leo108/SinglePHP.git</code></p>
                 </div>
             </div>
             <div class="bs-docs-section">
               <div class="page-header">
-                <h1 id="dir">目录结构</h1>
+                <h1 id="dir">Directoies Struct</h1>
               </div>
               <div class='highlight'>
               <pre>
-              <code class="language-bash">├── App                                 #业务代码文件夹，可在配置中指定路径
-│   ├── Controller                      #控制器文件夹
+              <code class="language-bash">├── App                                 #application directoy
+│   ├── Controller                      #Controller folder
 │   │   └── IndexController.class.php
-│   ├── Lib                             #外部库
-│   ├── Log                             #日志文件夹，需要写权限
-│   ├── View                            #模板文件夹
-│   │   ├── Index                       #对应Index控制器
+│   ├── Lib                             #other libs
+│   ├── Log                             #log folder, should be writable
+│   ├── View                            #template folder
+│   │   ├── Index                       #IndexController's template folder
 │   │   │   └── Index.php
 │   │   └── Public
 │   │       ├── footer.php
 │   │       └── header.php
-│   ├── Widget                          #widget文件夹
+│   ├── Widget                          #widget folder
 │   │   ├── MenuWidget.class.php
-│   │   └── Tpl                         #widget模板文件夹
+│   │   └── Tpl                         #widget template folder
 │   │       └── MenuWidget.php
-│   └── common.php                      #一些共用函数
-├── SinglePHP.class.php                 #SinglePHP核心文件
-└── index.php                           #入口文件</code>
+│   └── common.php                      #common functions
+├── SinglePHP.class.php                 #SinglePHP core
+└── index.php                           #the entrance file</code>
               </pre>
               </div>
             </div>
@@ -114,29 +114,29 @@
               <div class="page-header">
                 <h1 id="hello_world">Hello World</h1>
               </div>
-              <p class="lead">只需增加3个文件，即可输出hello world。</p>
-              <p>入口文件：index.php</p>
+              <p class="lead">3-files hello world</p>
+              <p>Entrance file: index.php</p>
               <div class='highlight'>
               <pre><code class="language-php">&lt;?php
-include './SinglePHP.class.php';         //包含核心文件
-$config = array('APP_PATH' =&gt; './App/'); //指定业务目录为App
-SinglePHP::getInstance($config)-&gt;run();  //撒丫子跑起来啦</code></pre>
+include './SinglePHP.class.php';         //include the SinglePHP
+$config = array('APP_PATH' =&gt; './App/'); //Set the application directoy to "./App/"
+SinglePHP::getInstance($config)-&gt;run();  //go go go!</code></pre>
               </div>
-              <p>默认控制器：App/Controller/IndexController.class.php</p>
+              <p>Default Controller: App/Controller/IndexController.class.php</p>
               <div class='highlight'>
               <pre><code class="language-php">&lt;?php
-class IndexController extends Controller {       //控制器必须继承Controller类或其子类
-    public function IndexAction(){               //默认Action
-        $this-&gt;assign('content', 'Hello World'); //给模板变量赋值
-        $this-&gt;display();                        //渲染吧骚年
+class IndexController extends Controller {       //Controller
+    public function IndexAction(){               //Default Action
+        $this-&gt;assign('content', 'Hello World'); //set the template variant 'content' to 'Hello World'
+        $this-&gt;display();                        //render and display
     }
 }</code></pre>
               </div>
-              <p>模板文件：App/View/Index/Index.php</p>
+              <p>Template file: App/View/Index/Index.php</p>
               <div class='highlight'>
               <pre><code class="language-php">&lt;?php echo $content;</code></pre>
               </div>
-              <p>在浏览器访问index.php，应该会输出</p>
+              <p>Visit index.php, it should print</p>
               <div class='highlight'>
               <pre><code class="language-html">Hello World</code></pre>
               </div>

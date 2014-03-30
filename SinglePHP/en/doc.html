@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="author" content="leo108">
-    <title>详细文档</title>
+    <title>Document</title>
     <meta name="description" content="SinglePHP" />
     <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://v3.bootcss.com/docs-assets/css/docs.css" rel="stylesheet">
@@ -24,15 +24,15 @@
     <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
         <li>
-          <a href="./start.html">简介</a>
+          <a href="./start.html">Introduce</a>
         </li>
-        <li class="active">
-          <a href="./doc.html">详细文档</a>
+        <li>
+          <a href="./doc.html">Document</a>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a target='_blank' href="https://github.com/leo108/SinglePHP">SinglePHP官网</a>
+          <a target='_blank' href="https://github.com/leo108/SinglePHP">SinglePHP Website</a>
         </li>
       </ul>
     </nav>
@@ -40,8 +40,8 @@
 </header>
     <div class="bs-header" id="content">
       <div class="container">
-        <h1>详细文档</h1>
-        <p>完整介绍SinglePHP的使用。</p>
+        <h1>Document</h1>
+        <p>Full document of SinglePHP</p>
       </div>
     </div>
     <div class="container bs-docs-container">
@@ -50,28 +50,28 @@
           <div class="bs-sidebar hidden-print" role="complementary">
             <ul class="nav bs-sidenav">
                 <li>
-                  <a href="#conf">配置</a>
+                  <a href="#conf">Configure</a>
                 </li>
                 <li>
-                  <a href="#router">路由</a>
+                  <a href="#router">Router</a>
                 </li>
                 <li>
-                  <a href="#controller">控制器</a>
+                  <a href="#controller">Controller</a>
                 </li>
                 <li>
-                  <a href="#db">数据库操作</a>
+                  <a href="#db">Database Operation</a>
                 </li>
                 <li>
-                  <a href="#view">视图引擎</a>
+                  <a href="#view">Template</a>
                 </li>
                 <li>
-                  <a href="#widget">Widget功能</a>
+                  <a href="#widget">Widget</a>
                 </li>
                 <li>
-                  <a href="#autoload">自动加载</a>
+                  <a href="#autoload">Autoload</a>
                 </li>
                 <li>
-                  <a href="#log">日志</a>
+                  <a href="#log">Log</a>
                 </li>
             </ul>
           </div>
@@ -79,20 +79,20 @@
         <div class="col-md-9" role="main">
             <div class="bs-docs-section">
               <div class="page-header">
-                <h1 id="conf">配置</h1>
+                <h1 id="conf">Configure</h1>
               </div>
               <p class="lead">项目配置需要在入口文件传递给SinglePHP，目前支持的配置如下：</p>
               <div class='highlight'>
               <pre><code class='language-php'>$config = array(
-    'APP_PATH'    =&gt; './App/',       #APP业务代码文件夹
-    'DB_HOST'     =&gt; '127.0.0.1',    #数据库主机地址
-    'DB_PORT'     =&gt; '3306',         #数据库端口，默认为3306
-    'DB_USER'     =&gt; 'root',         #数据库用户名
-    'DB_PWD'      =&gt; 'toor',         #数据库密码
-    'DB_NAME'     =&gt; 'singlephp',    #数据库名
-    'DB_CHARSET'  =&gt; 'utf8',         #数据库编码，默认utf8
-    'PATH_MOD'    =&gt; 'NORMAL',       #路由方式，支持NORMAL和PATHINFO，默认NORMAL
-    'USE_SESSION' =&gt; true,           #是否开启session，默认false
+    'APP_PATH'    =&gt; './App/',       #application directory
+    'DB_HOST'     =&gt; '127.0.0.1',    #Database Host
+    'DB_PORT'     =&gt; '3306',         #Database Port, Defaut: 3306
+    'DB_USER'     =&gt; 'root',         #Database User
+    'DB_PWD'      =&gt; 'toor',         #Database Password
+    'DB_NAME'     =&gt; 'singlephp',    #Database Name
+    'DB_CHARSET'  =&gt; 'utf8',         #Database Char Set, Defaut: utf8
+    'PATH_MOD'    =&gt; 'NORMAL',       #Router Type, support NORMAL and PATHINFO, Defaut: NORMAL
+    'USE_SESSION' =&gt; true,           #Use session, Defaut: false
 );
 SinglePHP::getInstance($config)-&gt;run();
               </code></pre>
@@ -100,10 +100,10 @@ SinglePHP::getInstance($config)-&gt;run();
             </div>
             <div class="bs-docs-section">
               <div class="page-header">
-                <h1 id="router">路由</h1>
+                <h1 id="router">Router</h1>
               </div>
               <p class="lead">目前路由支持NORMAL和PATHINFO两种方式</p>
-              <h3>NORMAL方式</h3>
+              <h3>NORMAL</h3>
               <p class="lead">在NORMAL方式下，必须通过url的c和a参数来指定对应的controller和action，默认都是Index。url的路由关系示例：</p>
                 <div class="highlight">
                 <pre><code>index.php                //IndexController-&gt;IndexAction
@@ -112,7 +112,7 @@ index.php?c=Test         //TestController-&gt;IndexAction
 index.php?c=Test&amp;a=Test  //TestController-&gt;TestAction
 </code></pre>
                 </div>
-              <h3>PATHINFO方式</h3>
+              <h3>PATHINFO</h3>
               <p class="lead">PATHINFO方式需要webserver支持PATHINFO，可以通过<code>var_dump($_SERVER['PATH_INFO']);</code>来查看。如果webserver不支持PATHINFO，而又配置成了PATHINFO方式的路由，SinglePHP将会忽略此项配置而采用NORMAL方式路由。示例如下：</p>
                 <div class="highlight">
                 <pre><code>index.php            //IndexController-&gt;IndexAction
